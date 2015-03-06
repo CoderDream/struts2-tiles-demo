@@ -6,13 +6,13 @@
     <package name="default" extends="struts-default">
         <action name="login" class="com.vaannila.action.LoginAction">
             <result name="success" type="redirectAction">
-                <param name="namespace">/menu</param>
+                <param name="namespace">/welcome</param>
                 <param name="actionName">welcomeLink</param>
             </result>
         </action>
     </package>
 
-    <package name="menu" extends="struts-default" namespace="/menu">
+    <package name="welcome" extends="struts-default" namespace="/welcome">
         <result-types>
             <result-type name="tiles"
                 class="org.apache.struts2.views.tiles.TilesResult" />
@@ -23,10 +23,26 @@
             <result name="welcome" type="tiles">welcome</result>
         </action>
 
+    </package>
+
+    <package name="friends" extends="struts-default" namespace="/friends">
+        <result-types>
+            <result-type name="tiles"
+                class="org.apache.struts2.views.tiles.TilesResult" />
+        </result-types>
+
         <action name="friendsLink" class="com.vaannila.action.LinkAction"
             method="friendsLink">
             <result name="friends" type="tiles">friends</result>
         </action>
+
+    </package>
+
+    <package name="office" extends="struts-default" namespace="/office">
+        <result-types>
+            <result-type name="tiles"
+                class="org.apache.struts2.views.tiles.TilesResult" />
+        </result-types>
 
         <action name="officeLink" class="com.vaannila.action.LinkAction"
             method="officeLink">
